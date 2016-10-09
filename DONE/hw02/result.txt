@@ -1,0 +1,18 @@
+=====================================================================
+Assignment: Homework 2
+OK, version v1.6.14
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Test summary
+    3 test cases passed! No cases failed.
+
+Submit... 0.0% completeSubmit... 100% complete
+Submission successful for user: anastasiavela@berkeley.edu
+URL: https://okpy.org/cal/cs61a/fa16/hw02/submissions/bkw71K
+
+Checking for software updates...
+OK is up to date

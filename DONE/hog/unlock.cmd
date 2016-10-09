@@ -1,0 +1,1 @@
+C:\Users\anastasiav\AppData\Local\Programs\Python\Python35\python.exe ok -q 07 -u
