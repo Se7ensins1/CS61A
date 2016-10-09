@@ -1,0 +1,18 @@
+=====================================================================
+Assignment: Lab 0
+OK, version v1.6.14
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Test summary
+    1 test cases passed! No cases failed.
+
+Submit... 0.0% completeSubmit... 100% complete
+Submission successful for user: anastasiavela@berkeley.edu
+URL: https://ok.cs61a.org/cal/cs61a/fa16/lab00/submissions/ax1qGJ
+
+Checking for software updates...
+OK is up to date

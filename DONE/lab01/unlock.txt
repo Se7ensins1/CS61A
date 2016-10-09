@@ -1,0 +1,20 @@
+=====================================================================
+Assignment: Lab 1
+OK, version v1.6.14
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unlocking tests
+
+At each "? ", type what you would expect the output to be.
+Type exit() to quit
+
+---------------------------------------------------------------------
+Truthiness > Suite 1 > Case 1
+(cases remaining: 2)
+
+What would Python display? If you get stuck, try it out in the Python
+interpreter!
+
+>>> 0 or True
+? 
