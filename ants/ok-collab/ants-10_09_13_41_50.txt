@@ -87,12 +87,12 @@ class Insect(object):
 
     is_ant = False
     damage = 0
-    watersafe = False
 
     def __init__(self, armor, place=None):
         """Create an Insect with an ARMOR amount and a starting PLACE."""
         self.armor = armor
         self.place = place  # set by Place.add_insect and Place.remove_insect
+        self.watersafe = False
 
     def reduce_armor(self, amount):
         """Reduce armor by AMOUNT, and remove the insect from its place if it
@@ -123,7 +123,10 @@ class Bee(Insect):
 
     name = 'Bee'
     damage = 1
-    watersafe = True
+
+    def __init__(self, armor):
+        Insect.__init__(self, armor)
+        self.watersafe = True
 
     def sting(self, ant):
         """Attack an ANT, reducing its armor by 1."""
@@ -198,7 +201,7 @@ class ThrowerAnt(Ant):
         # BEGIN Problem 3B
         "*** REPLACE THIS LINE ***""""
         if self.place not = hive:
-        """
+"""
         return random_or_none(self.place.bees)
         # END Problem 3B
 
@@ -223,7 +226,7 @@ def random_or_none(s):
 
 class Water(Place):
     """Water is a place that can only hold 'watersafe' insects."""
-
+    watersafe = False
     def add_insect(self, insect):
         """Add INSECT if it is watersafe, otherwise reduce its armor to 0."""
         # BEGIN Problem 3A
@@ -241,7 +244,6 @@ class FireAnt(Ant):
     # BEGIN Problem 4A
     lst = []
     implemented = True
-    food_cost = 5
     # END Problem 4A
 
     def reduce_armor(self, amount):
@@ -250,12 +252,10 @@ class FireAnt(Ant):
         the current place.
         """
         # BEGIN Problem 4A
-        lst = self.place.bees[:]
-        streng = self.armor - amount
-        if streng <= 0:
-            for bee in lst:
-                bee.reduce_armor(self.damage)
-        Ant.reduce_armor(self, amount)
+        self.armor -= amount
+        if self.armor <= 0:
+            Place.remove_insect(self)
+
         # END Problem 4A
 
 
