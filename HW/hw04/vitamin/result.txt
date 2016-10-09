@@ -1,19 +1,0 @@
-=====================================================================
-Assignment: Vitamin 4
-OK, version v1.7.1
-=====================================================================
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Running tests
-
----------------------------------------------------------------------
-Test summary
-    2 test cases passed! No cases failed.
-
-Submit... 0.0% completeSubmit... 100% complete
-Backup... 0.0% completeBackup... 100% complete
-Submission successful for user: anastasiavela@berkeley.edu
-URL: https://okpy.org/cal/cs61a/fa16/vitamin04/submissions/aKEMwr
-
-Checking for software updates...
-OK is up to date
