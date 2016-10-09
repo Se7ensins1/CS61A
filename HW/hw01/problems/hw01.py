@@ -1,6 +1,5 @@
 from operator import add, sub
 
-"Q1"
 def a_plus_abs_b(a, b):
     """Return a+abs(b), but without calling abs."""
     if b < 0:
@@ -10,13 +9,11 @@ def a_plus_abs_b(a, b):
 
     return f(a,b)
 
-"Q2"
 def two_of_three(a, b, c):
     """Return x*x + y*y, where x and y are the two largest members of the
     positive numbers a, b, and c."""
     return max(a*a+b*b, b*b+c*c, a*a+c*c)
 
-"Q3"
 def largest_factor(n):
     """Return the largest factor of n that is smaller than n."""
     num=0
@@ -29,7 +26,6 @@ def largest_factor(n):
             k+=1
     return num
 
-"Q4"
 def if_function(condition, true_result, false_result):
     """Return true_result if condition is a true value, and
     false_result otherwise."""    
@@ -53,7 +49,6 @@ def t():
 def f():
     return 1
 
-"Q5"
 def hailstone(n):
     """Print the hailstone sequence starting at n and return its length."""
     times = 1
