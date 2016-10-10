@@ -1,32 +1,16 @@
 class Fib():
-    """A Fibonacci number.
-
-    >>> start = Fib()
-    >>> start
-    0
-    >>> start.next()
-    1
-    >>> start.next().next()
-    1
-    >>> start.next().next().next()
-    2
-    >>> start.next().next().next().next()
-    3
-    >>> start.next().next().next().next().next()
-    5
-    >>> start.next().next().next().next().next().next()
-    8
-    """
+    """A Fibonacci number."""
 
     def __init__(self):
         self.value = 0
 
     def next(self):
-        previous = self.value
-        value = 1
-        self.value = self.value + previous
-        return self.value
-        
+        a = Fib()
+        if self.value == 0:
+            self.previous = 1
+        a.value  = self.previous + self.value
+        a.previous = self.value
+        return a
 
     def __repr__(self):
         return str(self.value)
@@ -75,7 +59,6 @@ class MissManners:
 
     def ask(self, message, *args):
         magic_word = 'please '
-        words = message.split()
         if not message.startswith(magic_word):
             return 'You must learn to say please first.'
         else:
