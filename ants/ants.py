@@ -449,11 +449,12 @@ class QueenAnt(ScubaThrower):
             self.reduce_armor(self.armor)
         else:
             loc = self.place.exit
-            while loc.exit != None:
+            while loc != None:
                 if loc.ant != None and loc.ant not in self.ants_behind:
-                    if hasattr(loc.ant, 'ant') and loc.ant.ant != None:
-                        loc.ant.ant.damage *= 2
                     loc.ant.damage *= 2
+                if loc.ant != None and hasattr(loc.ant, 'ant') and loc.ant.ant != None and loc.ant.ant not in self.ants_behind:
+                    loc.ant.ant.damage *= 2
+                    self.ants_behind.append(loc.ant.ant)
                 self.ants_behind.append(loc.ant)
                 loc = loc.exit
             ThrowerAnt.action(self, colony)
