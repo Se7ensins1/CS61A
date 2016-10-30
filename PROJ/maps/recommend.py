@@ -13,11 +13,8 @@ from visualize import draw_map
 
 def find_closest(location, centroids):
     """Return the centroid in centroids that is closest to location."""
-    distances = list(distance(location, i) for i in centroids)
-    for i in range(len(distances)):
-        if distances[i] == min(distances):
-            return centroids[i]
-
+    return min([i for i in centroids], key = lambda i: distance(i, location))
+    
 
 def group_by_first(pairs):
     """Return a list of pairs that relates each unique key in the [key, value]
