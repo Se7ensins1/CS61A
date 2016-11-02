@@ -36,7 +36,6 @@
 
 (define (nodots s)
   (cond
-   ; (
     ((not(pair? s)) (cons s nil))
     ((null? (cdr s)) s)
     ((pair? (car s)) (cons (nodots (car s)) (nodots (cdr s))))
