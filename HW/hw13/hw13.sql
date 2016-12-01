@@ -27,24 +27,9 @@ create table sizes as
 -- PLEASE DO NOT CHANGE ANY SQL STATEMENTS ABOVE THIS LINE --
 -------------------------------------------------------------
 
--- The size of each dog
-create table size_of_dogs as
-  select "REPLACE THIS LINE WITH YOUR SOLUTION";
-
--- All dogs with parents ordered by decreasing height of their parent
-create table by_height as
-  select "REPLACE THIS LINE WITH YOUR SOLUTION";
-
--- Sentences about siblings that are the same size
-create table sentences as
-  select "REPLACE THIS LINE WITH YOUR SOLUTION";
-
--- Ways to stack 4 dogs to a height of at least 170, ordered by total height
-create table stacks as
-  select "REPLACE THIS LINE WITH YOUR SOLUTION";
 
 -- non_parents is an optional, but recommended question
--- All non-parent relations ordered by height difference
+-- Q5: All non-parent relations ordered by height difference
 create table non_parents as
   select "REPLACE THIS LINE WITH YOUR SOLUTION";
 
@@ -55,8 +40,63 @@ create table ints as
     )
     select n from i;
 
+-- Q6: 
 create table divisors as
-    select "REPLACE THIS LINE WITH YOUR SOLUTION";
+	select a.n as x, count(b.n) as y
+    from ints as a, ints as b
+    where a.n %b.n = 0
+    group by a.n
+    ;
 
+
+--Q7:
 create table primes as
-    select "REPLACE THIS LINE WITH YOUR SOLUTION";
+    select x
+    from divisors
+    where y = 2;
+
+
+/*DONE*/
+
+
+-- Q1: The size of each dog
+create table size_of_dogs as
+  select d.name, s.size
+  from dogs as d, sizes as s
+  where d.height > s.min and d.height <= s.max;
+
+
+-- Q2: All dogs with parents ordered by decreasing height of their parent
+create table by_height as
+  select p.child
+  from dogs as d, parents as p
+  where p.parent = d.name  
+  order by -d.height;
+
+
+ -- Q3: Sentences about siblings that are the same size
+create table sentences as
+	with child (name, parent, size) as(
+		select p.child, p.parent, s.size
+			from parents as p, dogs as d, sizes as s
+			where p.child = d.name and d.height > s.min and d.height <= s.max
+ 	)
+  	select c1.name || " and " || c2.name || " are " || c1.size || " siblings"
+  		from child as c1, child as c2
+  		where c1.parent = c2.parent and c1.size = c2.size and c1.name < c2.name;
+
+
+-- Q4: Ways to stack 4 dogs to a height of at least 170, ordered by total height
+create table stacks as
+	with dogsInStack (names, total, n, max) as(
+		select name, height, 1, height from dogs union
+		select stack.names || ", " || d.name, total+d.height, n+1, d.height
+			from dogsInStack as stack, dogs as d
+			where stack.max < d.height and n < 4
+	)
+
+  	select names, total
+  	from dogsInStack
+  	where total >= 170 and n=4
+  	order by total
+  ;
