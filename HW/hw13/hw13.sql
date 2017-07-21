@@ -45,8 +45,7 @@ create table divisors as
 	select a.n as x, count(b.n) as y
     from ints as a, ints as b
     where a.n %b.n = 0
-    group by a.n
-    ;
+    group by a.n;
 
 
 --Q7:
